@@ -16,7 +16,9 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import javax.validation.Valid;
 import java.net.URI;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 
 @Api( description="API pour es opérations CRUD sur les produits.")
@@ -45,6 +47,13 @@ public class ProductController {
         produitsFiltres.setFilters(listDeNosFiltres);
 
         return produitsFiltres;
+    }
+
+    @ApiOperation(value = "Récupère la liste de tous les produits triés par nom")
+    @GetMapping(value = "/Produits/ordered")
+
+    public List<Product> trierProduitsParOrdreAlphabetique() {
+        return productDao.findAllByOrderByNom();
     }
 
 
