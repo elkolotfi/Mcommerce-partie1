@@ -1,0 +1,76 @@
+{
+	"info": {
+		"_postman_id": "c73fa92b-3780-4b00-8783-70353d596649",
+		"name": "TestOcr",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:9090/AdminProduits",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9090/AdminProduits/",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"AdminProduits",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:9090/Produits/ordered",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9090/Produits/ordered",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"Produits",
+						"ordered"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:9090/Produits",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\":\"gucci bag\", \"price\":0, \"priceBuy\":45}"
+				},
+				"url": {
+					"raw": "localhost:9090/Produits",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"Produits"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
