@@ -62,6 +62,20 @@ public class ProductController {
     }
 
 
+    @ApiOperation(value = "Récupère la liste de tous les produits avec la marge de chacun")
+    @GetMapping("/AdminProduits")
+
+    public MappingJacksonValue calculerMargeProduit() {
+
+        Map<String, Integer> map = new HashMap<>();
+        Iterable<Product> products = productDao.findAll();
+
+        products.forEach(product -> {
+            map.put(product.toString(), product.getPrix() - product.getPrixAchat());
+        });
+
+        return new MappingJacksonValue(map);
+    }
 
 
     //ajouter un produit
